@@ -47,10 +47,17 @@ To activate the debug logs, set the `DEBUG` env var to `*`, or to `slackbot-sigf
 $ npm start
 ```
 
-##Run
-
-```
-$ npm start
-```
 
 Then open in your browser [http://localhost:34005](http://localhost:34005)
+
+
+##Slack setup
+
+Once your application is deployed online, you need to create a [custom integration](https://api.slack.com/custom-integrations) .
+
+* Choose _Set up a slash command_ 
+* Set your application URL (matching your `SLACK_ROUTE`env var)
+* Use the _Token_ value as your `SLACK_TOKEN` env var
+* Save
+
+![Slack configuration](./slack-config.png "Slack configuration")
