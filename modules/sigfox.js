@@ -113,13 +113,17 @@ var SIGFOX = {
     }
   },
   getSlackMessage(message){
+    var text = ""
+    if (message.rinfos && message.rinfos.length){
+      text = "Received by "+message.rinfos.length+" base stations\n";
+    }
     return {
       text: "Sigfox device *"+message.device+"*",
       attachments: [
         {
             title:"Last message received "+moment(message.time*1000).fromNow(),
             color:message.linkQualityColour,
-            text:"Received by "+message.rinfos.length+" base stations\nLinkQuality : "+message.linkQuality
+            text:text+="LinkQuality : "+message.linkQuality
         },
         {
           fallback:"Image not found ☹",
