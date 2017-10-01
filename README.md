@@ -1,19 +1,19 @@
-#Slackbot Sigfox Localisation
+# Slackbot Sigfox Localisation
 
-##Description
+## Description
 
 Slackbot to get infos about the last message of a given device
 
-##Install
+## Install
 
 * Install [NodeJS](http://nodejs.org/)
 * Run `$ npm install`
 
-##Access credentials
+## Access credentials
 
 You need to set various env variables to configure this application : 
 
-###Server auth
+### Server auth
 This application is using Basic Auth authentication.
 
 Set the following vars to configure accepted login & password
@@ -23,13 +23,13 @@ Set the following vars to configure accepted login & password
 
 Use some pseudo-random values, generated automatically, using `LC_CTYPE=C tr -dc A-Za-z0-9_\(\)-+= < /dev/urandom | head -c 32` for example
 
-###Slack Params
+### Slack Params
 The URL path & the Slack token are also set through env vars, so they could be changed easily on a regular basis
 
 * `SLACK_ROUTE`
 * `SLACK_TOKEN`
 
-###SIGFOX Credentials
+### SIGFOX Credentials
 
 You also need to set your SIGFOX API credentials 
 
@@ -37,11 +37,11 @@ You also need to set your SIGFOX API credentials
 * `SIGFOX_PASSWORD`
 
 
-###Debug
+### Debug
 To activate the debug logs, set the `DEBUG` env var to `*`, or to `slackbot-sigfox-last-message:* `to get only app-related logs
 
 
-##Run
+## Run
 
 ```
 $ npm start
@@ -51,7 +51,7 @@ $ npm start
 Then open in your browser [http://localhost:34005](http://localhost:34005)
 
 
-##Slack setup
+## Slack setup
 
 Once your application is deployed online, you need to create a [custom integration](https://api.slack.com/custom-integrations) .
 
